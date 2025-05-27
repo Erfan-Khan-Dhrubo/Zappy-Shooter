@@ -1,16 +1,10 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class playerInput : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private PlayerInputData inputData;
+    private void OnMove(InputValue value)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        inputData.input = new Vector3(value.Get<Vector2>().x, 0, value.Get<Vector2>().y);
     }
 }

@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private PlayerInputData inputData;
+    [SerializeField] private float moveSpeed = 5f;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.position += inputData.input * moveSpeed * Time.deltaTime;
     }
 }
